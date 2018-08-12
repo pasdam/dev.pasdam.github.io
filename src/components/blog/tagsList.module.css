@@ -1,0 +1,21 @@
+.tag {
+    background-color: green;
+    border-radius: .2em;
+    display: inline-flex;
+    margin: 0.5em 1em 0.5em 0;
+    padding: .4em;
+}
+
+.tag a {
+	color: white;
+}
+
+.tagsWrapper hr,
+.tagsWrapper h1,
+.tagsWrapper h2,
+.tagsWrapper h3,
+.tagsWrapper h4,
+.tagsWrapper h5,
+.tagsWrapper h6 {
+	margin: 1em 0;
+}

@@ -1,0 +1,18 @@
+.letter {
+	font-size: 4rem;
+	opacity: 0.08;
+	position: absolute;
+	transform: translate(-50%, -40%);
+	user-select: none;
+	z-index: -1;
+}
+
+.subtitle {
+	color: darkgray;
+}
+
+.title {
+	margin-bottom: 0.75rem;
+	position: relative;
+	text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
