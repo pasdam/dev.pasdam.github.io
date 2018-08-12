@@ -5,8 +5,6 @@ import { faChevronCircleUp } from '@fortawesome/free-solid-svg-icons'
 
 import styles from "./backToTopButton.module.css"
 
-window.onscroll = function() { updateVisibility() };
-
 function scrollToTopFunction() {
 	document.body.scrollTop = 0;
 	document.documentElement.scrollTop = 0;
@@ -20,10 +18,17 @@ function updateVisibility() {
 	}
 }
 
-const BackToTopButton = ({ siteTitle }) => (
-	<div id={ styles.toTopButton } onClick={ () => scrollToTopFunction() }>
-		<FontAwesomeIcon icon={faChevronCircleUp} size="3x"/>
-	</div>
-)
+class BackToTopButton extends React.Component {
+
+	componentDidMount() {
+		window.onscroll = function() { updateVisibility() };
+	}
+
+	render() { return (
+		<div id={ styles.toTopButton } onClick={ () => scrollToTopFunction() }>
+			<FontAwesomeIcon icon={faChevronCircleUp} size="3x"/>
+		</div>
+	)}
+}
 
 export default BackToTopButton
