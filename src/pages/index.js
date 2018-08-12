@@ -8,7 +8,7 @@ const BlogIndex = ({
 }) => {
 	const Posts = edges
 		.filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-		.map(edge => <ListEntry excerpt={edge.node.excerpt} frontmatter={edge.node.frontmatter} timeToRead={edge.node.timeToRead} />);
+		.map(edge => <ListEntry key={edge.node.id} excerpt={edge.node.excerpt} frontmatter={edge.node.frontmatter} timeToRead={edge.node.timeToRead} />);
 
 	const posts = edges
 

@@ -20,7 +20,7 @@ const Tags = ({ pathContext, data }) => {
 				{edges.map(({ node }) => {
 					const { path, title } = node.frontmatter;
 					return (
-						<ListEntry excerpt={node.excerpt} frontmatter={node.frontmatter} timeToRead={node.timeToRead} />
+						<ListEntry key={node.id} excerpt={node.excerpt} frontmatter={node.frontmatter} timeToRead={node.timeToRead} />
 					);
 				})}
 			</ul>
@@ -61,6 +61,7 @@ export const pageQuery = graphql`
 			totalCount
 			edges {
 				node {
+					id
 					excerpt
 					frontmatter {
 						date
