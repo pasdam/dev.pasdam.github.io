@@ -1,25 +1,27 @@
 import React from "react";
-import ListEntry from "../components/blog/listEntry.js";
+import { graphql } from "gatsby"
 
-const BlogIndex = ({
-	data: {
-		allMarkdownRemark: { edges },
-	},
-}) => {
-	const Posts = edges
-		.filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-		.map(edge => <ListEntry key={edge.node.id} excerpt={edge.node.excerpt} frontmatter={edge.node.frontmatter} timeToRead={edge.node.timeToRead} />);
+import Layout from '../components/layout'
+import PostsList from "../components/blog/postsList.js";
 
-	const posts = edges
+require("prismjs/themes/prism.css");
 
-	return <div>{Posts}</div>;
-};
+const IndexPage = ({ data }) => (
+	<Layout metadata={ data.site.siteMetadata }>
+		<PostsList posts={ data.allMarkdownRemark.edges }/>
+	</Layout>
+)
 
-export default BlogIndex;
+export default IndexPage
 
 export const pageQuery = graphql`
 	query IndexQuery {
-		allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date], order: DESC }) {
+		site {
+			siteMetadata {
+				title
+			}
+		}
+		allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
 			edges {
 				node {
 					id

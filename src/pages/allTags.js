@@ -1,27 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { graphql, Link } from 'gatsby'
+import Helmet from "react-helmet";
 
 // Utilities
 import kebabCase from "lodash/kebabCase";
 
 // Components
-import Helmet from "react-helmet";
-import Link from "gatsby-link";
+import Layout from "../components/layout.js"
 
-const TagsPage = ({
-	data: {
-		allMarkdownRemark: { group },
-		site: {
-			siteMetadata: { title },
-		},
-	},
-}) => (
-	<div>
-		<Helmet title={title} />
+const TagsPage = ({ data }) => (
+	<Layout metadata={ data.site.siteMetadata }>
+		<Helmet title={ data.site.siteMetadata.title } />
 		<div>
 			<h1>Tags</h1>
 			<ul>
-				{group.map(tag => (
+				{data.allMarkdownRemark.group.map(tag => (
 					<li key={tag.fieldValue}>
 						<Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
 							{tag.fieldValue} ({tag.totalCount})
@@ -30,7 +24,7 @@ const TagsPage = ({
 				))}
 			</ul>
 		</div>
-	</div>
+	</Layout>
 );
 
 TagsPage.propTypes = {

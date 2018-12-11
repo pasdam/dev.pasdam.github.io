@@ -2,11 +2,11 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 const path = require("path");
 const _ = require('lodash')
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
-	const { createPage } = boundActionCreators;
+exports.createPages = ({ actions, graphql }) => {
+	const { createPage } = actions;
 
 	const blogPostTemplate = path.resolve(`src/templates/blog.js`);
-	const tagTemplate = path.resolve("src/templates/tags.js");
+	const tagTemplate = path.resolve("src/templates/tag.js");
 
 	return graphql(`
 		{
@@ -63,8 +63,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 	});
 };
 
-exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
-	const { createNodeField } = boundActionCreators
+exports.onCreateNode = ({ node, getNode, actions }) => {
+	const { createNodeField } = actions
 	if (node.internal.type === `MarkdownRemark`) {
 		const slug = createFilePath({ node, getNode, basePath: `pages` })
 		createNodeField({

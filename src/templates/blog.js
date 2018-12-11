@@ -1,33 +1,40 @@
 import React from "react";
+import { graphql } from 'gatsby'
+
 import TagsList from "../components/blog/tagsList.js"
+import Layout from "../components/layout.js"
 
 import styles from "./blog.module.css"
 
-export default function Template({
-	data, // this prop will be injected by the GraphQL query below.
-}) {
-	const { markdownRemark } = data; // data.markdownRemark holds our post data
-	const { frontmatter, html, tableOfContents, timeToRead } = markdownRemark;
+export default function Template({ data }) {
+	const { frontmatter, html, tableOfContents, timeToRead } = data.markdownRemark;
 
 	return (
-		<div>
-			<h1 className={ styles.title }>{frontmatter.title}</h1>
-			<div className={ styles.date }>{frontmatter.date} - {timeToRead} min read</div>
-			<hr />
-			<TagsList tags={frontmatter.tags} />
-			<hr />
-			<div dangerouslySetInnerHTML={{ __html: tableOfContents }} className="toc" />
-			<hr />
-			<div
-				dangerouslySetInnerHTML={{ __html: html }}
-			/>
-			<hr />
-		</div>
+		<Layout metadata={ data.site.siteMetadata }>
+			<div>
+				<h1 className={ styles.title }>{frontmatter.title}</h1>
+				<div className={ styles.date }>{frontmatter.date} - {timeToRead} min read</div>
+				<hr />
+				<TagsList tags={frontmatter.tags} />
+				<hr />
+				<div dangerouslySetInnerHTML={{ __html: tableOfContents }} className="toc" />
+				<hr />
+				<div
+					dangerouslySetInnerHTML={{ __html: html }}
+				/>
+				<hr />
+			</div>
+		</Layout>
 	);
 }
 
 export const pageQuery = graphql`
 	query BlogPostByPath($path: String!) {
+		site {
+			siteMetadata {
+				title
+			}
+		}
 		markdownRemark(frontmatter: { path: { eq: $path } }) {
 			frontmatter {
 				date(formatString: "MMMM DD, YYYY")

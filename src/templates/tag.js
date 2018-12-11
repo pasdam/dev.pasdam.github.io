@@ -1,35 +1,36 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { graphql, Link } from "gatsby"
+
 import ListEntry from "../components/blog/listEntry.js";
+import Layout from '../components/layout'
 
-// Components
-import Link from "gatsby-link";
-
-const Tags = ({ pathContext, data }) => {
-	const { tag } = pathContext;
+const TagPage = ({ pageContext, data }) => {
+	const { tag } = pageContext;
 	const { edges, totalCount } = data.allMarkdownRemark;
 	const tagHeader = `${totalCount} post${
 		totalCount === 1 ? "" : "s"
 	} tagged with "${tag}"`;
 
 	return (
-		<div>
-			<Link to="/tags">All tags</Link>
-			<h1>{tagHeader}</h1>
-			<ul>
-				{edges.map(({ node }) => {
-					const { path, title } = node.frontmatter;
-					return (
-						<ListEntry key={node.id} excerpt={node.excerpt} frontmatter={node.frontmatter} timeToRead={node.timeToRead} />
-					);
-				})}
-			</ul>
-		</div>
+		<Layout metadata={ data.site.siteMetadata }>
+			<div>
+				<Link to="/allTags">All tags</Link>
+				<h1>{tagHeader}</h1>
+				<ul>
+					{edges.map(({ node }) => {
+						return (
+							<ListEntry key={node.id} excerpt={node.excerpt} frontmatter={node.frontmatter} timeToRead={node.timeToRead} />
+						);
+					})}
+				</ul>
+			</div>
+		</Layout>
 	);
 };
 
-Tags.propTypes = {
-	pathContext: PropTypes.shape({
+TagPage.propTypes = {
+	pageContext: PropTypes.shape({
 		tag: PropTypes.string.isRequired,
 	}),
 	data: PropTypes.shape({
@@ -49,10 +50,15 @@ Tags.propTypes = {
 	}),
 };
 
-export default Tags;
+export default TagPage;
 
 export const pageQuery = graphql`
 	query TagPage($tag: String) {
+		site {
+			siteMetadata {
+				title
+			}
+		}
 		allMarkdownRemark(
 			limit: 2000
 			sort: { fields: [frontmatter___date], order: DESC }
