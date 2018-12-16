@@ -35,16 +35,18 @@ export const pageQuery = graphql`
 				title
 			}
 		}
-		markdownRemark(frontmatter: { path: { eq: $path } }) {
+		markdownRemark( fields: { slug: { eq: $path } } ) {
 			frontmatter {
 				date(formatString: "MMMM DD, YYYY")
-				path
 				title
 				tags
 			}
 			html
-			tableOfContents
+			tableOfContents(pathToSlugField: "fields.slug")
 			timeToRead
+			fields {
+				slug
+			}
 		}
 	}
 `;

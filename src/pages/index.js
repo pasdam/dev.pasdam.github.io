@@ -32,6 +32,9 @@ export const pageQuery = graphql`
 						title
 					}
 					timeToRead
+					fields {
+						slug
+					}
 				}
 			}
 		}

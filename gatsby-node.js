@@ -17,8 +17,10 @@ exports.createPages = ({ actions, graphql }) => {
 				edges {
 					node {
 						frontmatter {
-							path
 							tags
+						}
+						fields {
+							slug
 						}
 					}
 				}
@@ -33,7 +35,7 @@ exports.createPages = ({ actions, graphql }) => {
 
 		posts.forEach(({ node }) => {
 			createPage({
-				path: node.frontmatter.path,
+				path: node.fields.slug,
 				component: blogPostTemplate,
 				context: {}, // additional data can be passed via context
 			});
@@ -70,7 +72,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 		createNodeField({
 			node,
 			name: `slug`,
-			value: slug,
+			value: `/blog${slug}`,
 		})
 	}
 };

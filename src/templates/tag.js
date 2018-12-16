@@ -20,7 +20,7 @@ const TagPage = ({ pageContext, data }) => {
 				<ul>
 					{edges.map(({ node }) => {
 						return (
-							<ListEntry key={node.id} excerpt={node.excerpt} frontmatter={node.frontmatter} timeToRead={node.timeToRead} />
+							<ListEntry key={node.id} excerpt={node.excerpt} frontmatter={node.frontmatter} timeToRead={node.timeToRead} path={node.fields.slug}/>
 						);
 					})}
 				</ul>
@@ -40,9 +40,12 @@ TagPage.propTypes = {
 				PropTypes.shape({
 					node: PropTypes.shape({
 						frontmatter: PropTypes.shape({
-							path: PropTypes.string.isRequired,
+							date: PropTypes.string.isRequired,
 							title: PropTypes.string.isRequired,
 						}),
+						fields: PropTypes.shape({
+							slug: PropTypes.string.isRequired,
+						})
 					}),
 				}).isRequired
 			),
@@ -71,10 +74,12 @@ export const pageQuery = graphql`
 					excerpt
 					frontmatter {
 						date
-						path
 						title
 					}
 					timeToRead
+					fields {
+						slug
+					}
 				}
 			}
 		}
