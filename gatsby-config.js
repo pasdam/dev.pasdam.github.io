@@ -5,6 +5,15 @@ module.exports = {
 		keywords: "blog, software, engineering, development",
 	},
 	plugins: [
+		{
+			resolve: `gatsby-plugin-google-analytics`,
+			options: {
+				trackingId: "UA-20503043-3",
+				head: false,
+				anonymize: true,
+				respectDNT: true,
+			},
+		},
 		"gatsby-plugin-react-helmet",
 		{
 			resolve: "gatsby-plugin-typography",
