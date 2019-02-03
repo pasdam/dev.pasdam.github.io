@@ -1,6 +1,8 @@
 module.exports = {
 	siteMetadata: {
 		title: "/dev/null",
+		description: "Personal blog, which mainly contains tutorial on how to perform specific development tasks",
+		keywords: "blog, software, engineering, development",
 	},
 	plugins: [
 		"gatsby-plugin-react-helmet",
