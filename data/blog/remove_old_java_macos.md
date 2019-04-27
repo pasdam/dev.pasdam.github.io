@@ -5,7 +5,9 @@ title: "Uninstall older versions of Java from macOS"
 tags: [ "java", "macOS" ]
 ---
 
-In this brief tutorial we'll see how to remove old versions of java from macOS.
+Sometimes it happens that after installing different versions of Java you want to remove the old/unused ones: in this brief tutorial we'll see how to list all the installed versions and remove the one that are not required anymore from macOS.
+
+<!-- intro_end -->
 
 First we need to list all the installed version using the command `/usr/libexec/java_home -V`:
 

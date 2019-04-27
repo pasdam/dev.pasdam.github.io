@@ -13,7 +13,7 @@ const ListEntry = ({ excerpt, frontmatter, timeToRead, path }) => {
 			<Link className={ styles.title} to={path}>{frontmatter.title}</Link>
 		</h2>
 		<div className={ styles.subtitle }>{frontmatter.date} &mdash; {timeToRead} Min Read</div>
-		<p>{ excerpt }</p>
+		<div dangerouslySetInnerHTML={{ __html: excerpt }} />
 	</article>
   )
 }

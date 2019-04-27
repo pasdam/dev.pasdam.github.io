@@ -11,6 +11,8 @@ For this tutorial we will use the code available in the following Github project
 
 For the client, in this article I'll show how to write a command line one, but in the repository there is also a GUI client written with the [Qt framework](https://www.qt.io).
 
+<!-- intro_end -->
+
 ## Requirements
 
 * gRPC 1.4.2;

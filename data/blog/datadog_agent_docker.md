@@ -5,7 +5,9 @@ title: "Install DataDog Agent as a docker container"
 tags: [ "cloud", "DataDog", "Docker", "metrics", "monitoring" ]
 ---
 
-[DataDog](https://www.datadoghq.com/) is a monitoring service for cloud-scale applications, in the following we'll se how to create a docker container with the [DataDog agent](https://docs.datadoghq.com/agent/?tab=agentv6) and how to use it to publish metrics.
+[DataDog](https://www.datadoghq.com/) is a monitoring service for cloud-scale applications, in the following guide we'll see how to create a docker container with the [DataDog agent](https://docs.datadoghq.com/agent/?tab=agentv6) and how to use it to publish custom metrics.
+
+<!-- intro_end -->
 
 ## Requirements
 

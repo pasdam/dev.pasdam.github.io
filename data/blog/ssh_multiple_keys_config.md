@@ -5,7 +5,11 @@ title: "How to use different SSH keys"
 tags: ["SSH", "OpenSSL", "bash", "tutorial"]
 ---
 
-In this guide I will show you how to use a different SSH key for each domain.
+As a developer you might have to deal with SSH keys to access specific API/machines, and a common approach is to have one key for everything. For security reasons it's good to use different ones so that if one of them is compromised the other services are safe and you don't need to revoke and regenerate the keys for all your API/machines.
+
+In this guide I will show you how to use a different SSH keys for each domain.
+
+<!-- intro_end -->
 
 ## Requirements
 
@@ -65,7 +69,7 @@ Note: if you only have one key, the last part (`-i ~/.ssh/mydomain.com`) is not 
 
 ## Configure SSH
 
-Instead of specifying for each domain which key to use everytime we use the `ssh` command, we can configure it to automatically load the correct one.
+Instead of specifying for each domain which key to use every time we use the `ssh` command, we can configure it to automatically load the correct one.
 
 To do so, we need to create/edit the file [~/.ssh/config](https://www.ssh.com/ssh/config/). In it there should be an entry for each domain/host:
 

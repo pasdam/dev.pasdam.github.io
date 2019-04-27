@@ -34,6 +34,7 @@ module.exports = {
 		{
 			resolve: "gatsby-transformer-remark",
 			options: {
+				"excerpt_separator": `<!-- intro_end -->`,
 				plugins: [
 					"gatsby-remark-autolink-headers",
 					"gatsby-remark-embed-gist",
