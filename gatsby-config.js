@@ -3,6 +3,7 @@ module.exports = {
 		title: "/dev/null",
 		description: "Personal blog, which mainly contains tutorial on how to perform specific development tasks",
 		keywords: "blog, software, engineering, development",
+		disqusShortname: "pasdam-github-io",
 	},
 	plugins: [
 		{
