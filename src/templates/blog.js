@@ -17,10 +17,10 @@ export default function Template({ data }) {
 	return (
 		<Layout metadata={ data.site.siteMetadata }>
 			<div>
-				<h1 className={ styles.title }>{frontmatter.title}</h1>
-				<div className={ styles.date }>{frontmatter.date} - {timeToRead} min read</div>
+				<h1 className={ styles.title }>{ frontmatter.title }</h1>
+				<div className={ styles.date }>{ frontmatter.date } - { timeToRead } min read</div>
 				<hr />
-				<TagsList tags={frontmatter.tags} />
+				<TagsList tags={ frontmatter.tags } />
 				<hr />
 				<div dangerouslySetInnerHTML={{ __html: tableOfContents }} className="toc" />
 				<hr />
@@ -52,9 +52,6 @@ export const pageQuery = graphql`
 			html
 			tableOfContents(pathToSlugField: "fields.slug")
 			timeToRead
-			fields {
-				slug
-			}
 		}
 	}
 `;
