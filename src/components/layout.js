@@ -6,8 +6,6 @@ import Header from './header.js'
 
 import favicon from './favicon.png';
 
-require("prismjs/themes/prism.css");
-
 const Layout = ({ children, metadata }) => (
 	<div>
 		<Helmet
