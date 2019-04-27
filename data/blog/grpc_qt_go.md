@@ -42,7 +42,7 @@ For other language-specific installation instructions for gRPC runtime, please r
 
 The folders structure is be the following:
 
-```
+```none
 - client
   |- cli
   |- core
