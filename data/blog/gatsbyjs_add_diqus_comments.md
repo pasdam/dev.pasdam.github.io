@@ -2,7 +2,7 @@
 path: "gatsbyjs_add_diqus_comments"
 date: "2019-04-27"
 title: "Add Disqus comments to a GatsbyJS static blog"
-tags: [ "blog", "comments", "Disqus", "GatsbyJS" ]
+tags: [ "blog", "comments", "Disqus", "GatsbyJS", "tutorial" ]
 ---
 
 There are [different ways](https://www.gatsbyjs.org/blog/2018-04-10-how-to-handle-comments-in-gatsby-blogs/) to add a comments section to your static website or blog, in this guide we won't talk about pros and cons of each solution but we will actually focus on how to use [Disqus](https://disqus.com) to enable users to leave comments on a blog generated with [GatsbyJS](https://www.gatsbyjs.org/).
@@ -67,6 +67,8 @@ class Article extends React.Component {
 The `disqusShortname` is the value that we got in the previous section when adding the website to [Disqus](https://disqus.com).
 
 To see the few changes I made to this blog to add the comments section just refer to the commit [6186e53]([to.do](https://github.com/pasdam/dev.pasdam.github.io/commit/6186e53a81e75fefea17ac269d2d00fee34237d3)).
+
+---
 
 Sources:
 
