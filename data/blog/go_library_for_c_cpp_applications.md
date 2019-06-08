@@ -9,7 +9,7 @@ This simple tutorial will show how is possible to call [Go](https://golang.org/)
 
 <!-- intro_end -->
 
-The code written for this example is in a [Github repo](https://github.com/pasdam/example-c-go).
+The code written for this example is in a [Github repo](https://github.com/pasdam/hello-world-c-go).
 
 ## Go library
 
