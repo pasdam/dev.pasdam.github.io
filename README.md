@@ -2,6 +2,14 @@
 
 This repository contains the source code for [pasdam.github.io](https://pasdam.github.io/).
 
+## Initial setup
+
+To download all the dependencies:
+
+```sh
+npm install
+```
+
 ## Development
 
 To run the website in development mode:
