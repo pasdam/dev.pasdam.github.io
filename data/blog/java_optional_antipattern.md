@@ -7,7 +7,7 @@ tags: [ "antipattern", "engineering", "java", "pattern" ]
 
 Traditionally, Java programs have returned null as a way to represent that a value isn’t present. The version 8 of the SDK includes a new class which was made specifically to manage missing values.
 
-I won't describe the details of the [Optional](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html) class, but very briefly it a container object which may or may not contain a non-null value. Therefore, it is possible to manipulate null values as if they were normal instances without necessarily having to perform a null check at every step.
+I won't describe the details of the [Optional](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html) class, but very briefly it's   a container object which may or may not contain a non-null value. Therefore, it is possible to manipulate null values as if they were normal instances without necessarily having to perform a null check at every step.
 
 In this article, I'm going to talk about experiences I gathered while working with Java and describe some anti-patterns I've seen about such class.
 
