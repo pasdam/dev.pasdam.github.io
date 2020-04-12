@@ -7,7 +7,7 @@ const PostsList = ({ posts }) => {
 		.filter(post => !!post.node.frontmatter.date)
 		.map(post => <ListEntry key={post.node.id} excerpt={post.node.excerpt} frontmatter={post.node.frontmatter} timeToRead={post.node.timeToRead} path={post.node.fields.slug}/>);
 
-	return <div>{ posts}</div>;
+	return <div>{ posts }</div>;
 };
 
 export default PostsList

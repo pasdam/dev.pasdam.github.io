@@ -14,6 +14,7 @@ const ListEntry = ({ excerpt, frontmatter, timeToRead, path }) => {
 		</h2>
 		<div className={ styles.subtitle }>{frontmatter.date} &mdash; {timeToRead} Min Read</div>
 		<div dangerouslySetInnerHTML={{ __html: excerpt }} />
+		<hr class={ styles.divider } />
 	</article>
   )
 }
