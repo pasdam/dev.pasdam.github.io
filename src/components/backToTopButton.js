@@ -24,9 +24,9 @@ class BackToTopButton extends React.Component {
 	}
 
 	render() { return (
-		<div id={ styles.toTopButton } onClick={ () => scrollToTopFunction() }>
+		<button id={ styles.toTopButton } onClick={ () => scrollToTopFunction() }>
 			<FontAwesomeIcon icon={faChevronCircleUp} size="3x"/>
-		</div>
+		</button>
 	)}
 }
 
