@@ -47,7 +47,7 @@ The output library will be in `build/golib.a`, the compiler will also generate a
 
 ## C++ application
 
-```c++
+```cpp
 #include "golib.h"
 
 int main(int argc, char **argv) {

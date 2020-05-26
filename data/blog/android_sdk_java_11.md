@@ -13,7 +13,7 @@ Since with the release 11 some deprecated packages used by the Android SDK [were
 
 When using the sdk with newes version of Java the following exception will happen:
 
-```sh
+```shell
 $ $ANDROID_HOME/tools/bin/sdkmanager
 Exception in thread "main" java.lang.NoClassDefFoundError: javax/xml/bind/annotation/XmlSchema
     at com.android.repository.api.SchemaModule$SchemaModuleVersion.<init>(SchemaModule.java:156)
@@ -40,7 +40,7 @@ On macOS is possible to use brew to [install different versions](https://github.
 
 To check the installed version of Java on macOS:
 
-```sh
+```shell
 $ /usr/libexec/java_home -V
 Matching Java Virtual Machines (2):
     11.0.2, x86_64:	"Java SE 11.0.2"	/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home
@@ -49,14 +49,14 @@ Matching Java Virtual Machines (2):
 
 And to check the current active one:
 
-```sh
+```shell
 $ echo $JAVA_HOME
 /Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home
 ```
 
 or:
 
-```sh
+```shell
 $ java -version
 java version "11.0.2" 2019-01-15 LTS
 Java(TM) SE Runtime Environment 18.9 (build 11.0.2+9-LTS)
@@ -65,14 +65,14 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.2+9-LTS, mixed mode)
 
 To easily switch between the two sdk it's possible to [define aliases](https://github.com/pasdam/devbox-setup/blob/master/dotfiles/aliases/java):
 
-```sh
+```shell
 j11='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home; java -version'
 j8='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home; java -version'
 ```
 
 so that it's possible to activate the required version with:
 
-```sh
+```shell
 # activate Java 11:
 j11
 
@@ -84,7 +84,7 @@ j8
 
 Now it will be possible to run the Android SDK with:
 
-```sh
+```shell
 j8
 $ANDROID_HOME/tools/bin/sdkmanager
 ```

@@ -73,7 +73,7 @@ Instead of specifying for each domain which key to use every time we use the `ss
 
 To do so, we need to create/edit the file [~/.ssh/config](https://www.ssh.com/ssh/config/). In it there should be an entry for each domain/host:
 
-```config
+```text
 IdentityFile ~/.ssh/deault
 
 Host github.com

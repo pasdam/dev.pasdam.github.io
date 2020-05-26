@@ -123,13 +123,13 @@ go_memstats_alloc_bytes_total 6.165966528e+09
 
 To send test metrics you can use the following:
 
-```sh
+```shell
 echo -n "custom_metric:20|g|#shell" > /dev/udp/localhost/8125
 ```
 
 Or on macOS
 
-```sh
+```shell
 echo -n "custom_metric:20|g|#shell" | nc -4u -w0 localhost 8125
 ```
 

@@ -7,7 +7,7 @@ tags: [ "android sdk", "bug", "flutter", "java" ]
 
 Because of [android SDK not correctly working with java 11](/blog/android_sdk_java_11/), when run `flutter doctor` we'll get the following error:
 
-```sh
+```shell
 $ flutter doctor
 ...
 Android license status unknown.
@@ -21,7 +21,7 @@ To fix this, just follow the instructions to [download the older version of Java
 
 If after switching java version `flutter doctor` still complains about licenses not accepted, just run the following:
 
-```sh
+```shell
 yes | sdkmanager --licenses
 ```
 
