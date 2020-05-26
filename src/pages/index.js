@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby"
 
-import Layout from '../components/layout'
 import PostsList from "../components/blog/postsList.js";
+import Layout from '../components/layout.js'
 
 require("prismjs/themes/prism.css");
 
