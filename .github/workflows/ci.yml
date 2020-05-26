@@ -1,0 +1,19 @@
+on: push
+name: Build and deploy
+jobs:
+  build:
+    name: Build Site
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Build Gatsby Site
+      uses: jzweifel/gatsby-cli-github-action@master
+      with:
+        gatsby-arg: build
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        external_repository: pasdam/pasdam.github.io
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_branch: master
+        publish_dir: ./public
